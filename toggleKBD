@@ -1,0 +1,12 @@
+#!/bin/sh
+
+CURRENT_BINDING="$(cat ~/.current_binding | xargs)"
+
+case $CURRENT_BINDING in
+   ESC)
+     ~/.config/xmodmap/changeKBD 'CTRL'
+   ;;
+   CTRL)
+     ~/.config/xmodmap/changeKBD 'ESC'
+   ;;
+esac

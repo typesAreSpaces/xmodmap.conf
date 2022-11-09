@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CURR_DIR=`dirname $0`
+setxkbmap -option
+rm -rf $HOME/.Xmodmap
+
+case $1 in
+  ESC)
+    ln -s ${CURR_DIR}/caps_is_esc ${HOME}/.Xmodmap
+    xmodmap ${HOME}/.Xmodmap
+    echo "ESC" > ~/.current_binding
+    ;;
+  CTRL)
+    ln -s ${CURR_DIR}/caps_is_ctrl ${HOME}/.Xmodmap
+    xmodmap ${HOME}/.Xmodmap
+    echo "CTRL" > ~/.current_binding
+    ;;
+esac
