@@ -10,7 +10,7 @@ case $1 in
     xmodmap $HOME/.Xmodmap
     echo "ESC" > $HOME/.current_binding
     ;;
-  CTRL)
+  CTRL | *)
     ln -s $CURR_DIR/caps_is_ctrl $HOME/.Xmodmap
     xmodmap $HOME/.Xmodmap
     echo "CTRL" > $HOME/.current_binding
